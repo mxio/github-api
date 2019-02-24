@@ -1,10 +1,5 @@
 'use strict;'
 
-
-
-//"https://api.github.com/users/:username/repos"
-
-
 const apiURL = "https://api.github.com/users/";
 
 function displayRepos(responseJson) {
@@ -20,7 +15,7 @@ function displayRepos(responseJson) {
 
 function getRepos(githubUser) {
     const url = apiURL + githubUser + "/repos";
-    console.log(url);
+
     fetch(url)
         .then(response => {
             if (response.ok) {
@@ -30,7 +25,7 @@ function getRepos(githubUser) {
         })
         .then(responseJson => displayRepos(responseJson))
         .catch(error => {
-            //error message
+            $('section').append(`<p>Error: ${error.message}.`);
         })
 }
 
