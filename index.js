@@ -11,7 +11,7 @@ function displayRepos(responseJson) {
     $('section').empty();
 
     for (let i = 0; i < responseJson.length; i++) {
-        let listString = `<li><p>${responseJson[i].name}</p><p><a href="${responseJson[i].html_url}">View Repo</a>`;
+        let listString = `<li><p>${responseJson[i].name}</p><p><a href="${responseJson[i].html_url}">View Repo</a></p></li>`;
         $('section').append(listString);
     }
 
