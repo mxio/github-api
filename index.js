@@ -6,10 +6,10 @@
 
 
 function watchForm() {
-    $('form').submit(event => {
-        event.preventDefault()
-        const githubUser = $('input').is("type=text").val();
-        getRepos();
+    $('form').submit(function(event) {
+        event.preventDefault();
+        const githubUser = $('#user-input').val();
+        getRepos(githubUser);
     });
 }
 
